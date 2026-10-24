@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<h1>Discussion Board</h1>
+<form method="POST" action="/comments" class="card">
+  <label>Your comment
+    <textarea name="body" rows="3"></textarea>
+  </label>
+  <button type="submit">Post</button>
+</form>
+
+<div class="comments">
+  <% comments.forEach(function(c){ %>
+    <div class="comment">
+      <div class="meta"><%- c.author %> · <%= c.created_at %></div>
+      <div class="body"><%- c.body %></div>
+    </div>
+  <% }); %>
+</div>
+<%- include('partials/footer') %>

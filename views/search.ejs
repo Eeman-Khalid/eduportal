@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<h1>Course Search</h1>
+<form method="GET" action="/search" class="card">
+  <label>Search <input name="q" value="<%= q %>"></label>
+  <button type="submit">Search</button>
+</form>
+
+<% if (q) { %><p>Results for: <%- reflected %></p><% } %>
+<% if (error) { %><p class="error"><%= error %></p><% } %>
+
+<ul class="list">
+  <% courses.forEach(function(c){ %>
+    <li><strong><%= c.title %></strong><br><%= c.description %></li>
+  <% }); %>
+</ul>
+<%- include('partials/footer') %>
