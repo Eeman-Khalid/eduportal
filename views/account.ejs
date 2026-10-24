@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+<h1>Account Settings</h1>
+<% if (message) { %><p class="info"><%= message %></p><% } %>
+<form method="POST" action="/account/change-password" class="card">
+  <% if (isSafe) { %><input type="hidden" name="_csrf" value="<%= csrfToken %>"><% } %>
+  <label>New password <input name="newPassword"></label>
+  <button type="submit">Change Password</button>
+</form>
+<%- include('partials/footer') %>
